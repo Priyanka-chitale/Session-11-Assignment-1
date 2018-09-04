@@ -22,13 +22,11 @@ barplot(job, main="Distribution on clients",
         xlab="Clients", ylab = "Count")
 
 ## c. Check whether is there any relation between Job and Marital Status?
+chisq.test(bank$marital,bank$job)
 
-marital = table(bank$marital)
-
-t.test(job,marital)
+## We reject the null hypothesis as the p value is very low. There is a relation between Job and Marital Status
 
 ## d. Check whether is there any association between Job and Education?
+chisq.test(bank$job, bank$education)
 
-education = table(bank$education)
-
-t.test(job,education)
+## We reject the null hypothesis as the p value is very low. There is an association between Job and Education
